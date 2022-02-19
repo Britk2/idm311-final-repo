@@ -58,3 +58,16 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# IDM Custom Unity Project Ignores
+*.DS_Store
+Library/
+Temp/
+Build*/
+/GasStation/[Ll]ibrary/
+/GasStation/[Tt]emp/
+/GasStation/[Oo]bj/
+/GasStation/[Bb]uild*/
+/GasStation/[Ll]ogs/
+/GasStation/[Mm]emoryCaptures/
+/GasStation/[Tt]emp/
+
