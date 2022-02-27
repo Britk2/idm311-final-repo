@@ -10,8 +10,12 @@ public class CharacterRotate : MonoBehaviour
 
     private float xRotation = 0f;
 
-    public GameObject menuObj;
-    public GameObject InteractObj;
+    public GameObject menuObjVending;
+    public GameObject InteractObjVending;
+    public GameObject menuObjATM;
+    public GameObject InteractObjATM;
+    public GameObject menuObjTime;
+    public GameObject InteractObjTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +55,17 @@ public class CharacterRotate : MonoBehaviour
                 if(hit.transform.name == "ColaMachine")
                 {
                     Debug.Log("Vending Machine Clicked");
-                    menuObj.SetActive(true);
+                    menuObjVending.SetActive(true);
+                }
+                if (hit.transform.name == "ATM")
+                {
+                    Debug.Log("ATM Clicked");
+                    menuObjATM.SetActive(true);
+                }
+                if (hit.transform.name == "Bus stop pole")
+                {
+                    Debug.Log("Bus Stop Clicked");
+                    menuObjTime.SetActive(true);
                 }
             }
         }
