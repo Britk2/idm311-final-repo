@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CharacterRotate : MonoBehaviour
 {
@@ -50,22 +51,25 @@ public class CharacterRotate : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit))
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                if(hit.transform.name == "ColaMachine")
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("Vending Machine Clicked");
-                    menuObjVending.SetActive(true);
-                }
-                if (hit.transform.name == "ATM")
-                {
-                    Debug.Log("ATM Clicked");
-                    menuObjATM.SetActive(true);
-                }
-                if (hit.transform.name == "Bus stop pole")
-                {
-                    Debug.Log("Bus Stop Clicked");
-                    menuObjTime.SetActive(true);
+                    if (hit.transform.name == "ColaMachine")
+                    {
+                        Debug.Log("Vending Machine Clicked");
+                        menuObjVending.SetActive(true);
+                    }
+                    if (hit.transform.name == "ATM")
+                    {
+                        Debug.Log("ATM Clicked");
+                        menuObjATM.SetActive(true);
+                    }
+                    if (hit.transform.name == "Bus stop pole")
+                    {
+                        Debug.Log("Bus Stop Clicked");
+                        menuObjTime.SetActive(true);
+                    }
                 }
             }
         }
